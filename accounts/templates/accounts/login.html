@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="container text-center p-3">LOGIN</h2>
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control" />
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary mb-4 ">Submit</button>
+    </form>
+    <div class="other-log-in">
+      <h6></h6>
+  </div>
+
+  <div class="sign-up-box">
+      <h4>Are You Register ?</h4>
+      <!-- TODO: set link to login page -->
+      <a href="{% url 'signup' %}">SignUP</a>
+  </div>
+  </div>
+{% endblock%}
